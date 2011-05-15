@@ -1,0 +1,1 @@
+{{ score|floatformat:0 }}

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/nexi/openid_consumer/templates/openid_consumer
+END
+openid_consumer_base.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2/trunk/nexi/openid_consumer/templates/openid_consumer/openid_consumer_base.html
+END
+signin.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/nexi/openid_consumer/templates/openid_consumer/signin.html
+END
+failure.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2/trunk/nexi/openid_consumer/templates/openid_consumer/failure.html
+END

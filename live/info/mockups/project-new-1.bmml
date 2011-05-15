@@ -1,0 +1,54 @@
+<mockup version="1.0" skin="sketch" measuredW="1092" measuredH="665" mockupW="1019" mockupH="590">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="63" y="65" w="1019" h="590" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>nexi%0Ahttp%3A//nexi.me</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="102" y="148" w="-1" h="-1" measuredW="86" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>nexi.me</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="__group__" x="786" y="153" w="-1" h="-1" measuredW="215" measuredH="22" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>login%26bm%3Blogin.bmml%26bm%3Blogin.bmml%26bm%3Blogin.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22723%2C88%2C938%2C110%22%20href%3D%22login.bmml%22%20alt%3D%22login%22%20id%3D%2237%22/%3E</map>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="157" measuredH="22" zOrder="0" locked="false" isInGroup="37">
+          <controlProperties>
+            <text>Andrei%20Eftimie%20%28on%20LinkedIn%29</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="172" y="0" w="-1" h="-1" measuredW="43" measuredH="22" zOrder="1" locked="false" isInGroup="37">
+          <controlProperties>
+            <href>login%26bm%3Blogin.bmml%26bm%3Blogin.bmml%26bm%3Blogin.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22895%2C88%2C938%2C110%22%20href%3D%22login.bmml%22%20alt%3D%22login%22%20id%3D%221%22/%3E</map>
+            <text>Logout</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::TextInput" x="102" y="225" w="283" h="-1" measuredW="79" measuredH="42" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="101" y="200" w="65" h="17" measuredW="65" measuredH="17" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Project%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Title" x="109" y="225" w="268" h="-1" measuredW="267" measuredH="42" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>project-new-2%26bm%3Bproject-new-2.bmml%26bm%3Bproject-new-2.bmml%26bm%3Bproject-new-2.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2246%2C160%2C314%2C202%22%20href%3D%22project-new-2.bmml%22%20alt%3D%22project-new-2%22%20id%3D%2250%22/%3E</map>
+        <size>32</size>
+        <text>Name%20your%20project</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

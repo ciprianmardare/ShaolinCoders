@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>nexi.me</title>
+		
+		<link rel="stylesheet" href="css/nexi.css">
+	</head>
+	<body>
+		
+		
+		<header role="banner">
+			<h1 class="logo"><a href="/">nexi.me</a></h1>
+			
+			<div class="user">
+				Andrei Eftimie <a href="/logout/">Logout</a>
+			</div>
+		</header>
+		
+		
+		<article class="project">
+			<header>
+				<small>Project Name</small>
+				<h1>Helios</h1>				
+			</header>
+			
+			<section class="skills column">
+				<header>
+					<h1>Skills</h1>
+				</header>
+				<ul id="skill-list">
+					<li>html</li>
+					<li>css</li>
+					<li>javascript</li>
+					<li>python</li>
+					<li>django</li>
+					<li>photoshop</li>
+				</ul>
+				<div class="add-skill">
+					<input type="text" placeholder="Skill Name" />
+					<input type="submit" value="Add Skill" >
+				</div>
+				
+				<!-- 
+					TODO de returnat doar rezultate pentru skilluri de care avem încă nevoie
+				-->
+				<div class="filter-active-skills">
+					<input type="checkbox" id="filter_active_skills" name="filter_active_skills">
+					<label for="filter_active_skills">Return results only for needed skills</label>
+				</div>
+				
+				<!--
+					Edit Project
+					Aici sunt câmpurile necesare editării proiectului
+				-->
+				<form id="edit-project" method="post" action="/projects/edit/{{ projectName }}">
+					<input type="hidden" name="project_name" value="{{ projectName }}">
+					<input type="hidden" name="skills" value="html,css,javascript,python,django,photoshop">										
+				</form>
+				
+			</section>
+			
+			<section class="results column">
+				<button id="fetch">Fetch People</button>
+				
+				<div id="results">
+					<!--
+						Aici vin rezultatele query-ului
+					-->
+					
+					<div class="person">
+						<figure><img src="http://flickholdr.com/50/50/person"></figure>
+						<h1>Nume Prenume</h1>
+						<p>html, css, lorem, ipsum</p>
+					</div>
+					
+					<div class="person">
+						<figure><img src="http://flickholdr.com/50/50/person"></figure>
+						<h1>Nume Prenume</h1>
+						<p>html, css, lorem, ipsum</p>
+					</div>
+					
+					<div class="person">
+						<figure><img src="http://flickholdr.com/50/50/person"></figure>
+						<h1>Nume Prenume</h1>
+						<p>html, css, lorem, ipsum</p>
+					</div>
+					
+					<div class="person">
+						<figure><img src="http://flickholdr.com/50/50/person"></figure>
+						<h1>Nume Prenume</h1>
+						<p>html, css, lorem, ipsum</p>
+					</div>
+					
+				</div>
+			</section>
+			
+			<section class="staff column">
+				
+				<div class="person">
+					<figure><img src="http://flickholdr.com/50/50/person"></figure>
+					<h1>Nume Prenume</h1>
+					<p>html, css, lorem, ipsum</p>
+				</div>
+				
+				<div class="person">
+					<figure><img src="http://flickholdr.com/50/50/person"></figure>
+					<h1>Nume Prenume</h1>
+					<p>html, css, lorem, ipsum</p>
+				</div>
+				
+				<div class="person">
+					<figure><img src="http://flickholdr.com/50/50/person"></figure>
+					<h1>Nume Prenume</h1>
+					<p>html, css, lorem, ipsum</p>
+				</div>
+				
+				<div class="person">
+					<figure><img src="http://flickholdr.com/50/50/person"></figure>
+					<h1>Nume Prenume</h1>
+					<p>html, css, lorem, ipsum</p>
+				</div>
+				
+			</section>
+			
+			<section class="status column">				
+				<p class="percent-completed">Helios is currently <big><span id="completed-percent">26</span>%</big> staffed				</p>				
+				<p>Helios is autoamtically saved</p>				
+				<a href="/">Back to the dashboard</a>				
+			</section>
+			
+		</article>
+		
+		
+	</body>
+</html>

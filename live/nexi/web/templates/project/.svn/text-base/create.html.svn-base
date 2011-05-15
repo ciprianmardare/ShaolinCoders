@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+	<article class="project">
+		<header>
+			<small>Project Name</small>
+			<h1 id="project-name" class="edit"><input type="text" name="name"></h1>
+		</header>				
+		<input type="submit" value="Create">
+	</article>
+</form>	
+{% endblock %}

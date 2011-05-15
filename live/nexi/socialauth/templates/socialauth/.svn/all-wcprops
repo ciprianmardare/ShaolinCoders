@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth
+END
+signin_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth/signin_complete.html
+END
+xd_receiver.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth/xd_receiver.htm
+END
+login_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth/login_page.html
+END
+editprofile.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth/editprofile.html
+END
+socialauth_base.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2/trunk/nexi/socialauth/templates/socialauth/socialauth_base.html
+END

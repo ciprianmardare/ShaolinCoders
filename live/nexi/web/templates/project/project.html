@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="project">
+<header>
+	<small>Project Name</small>
+	<h1 id="project-name" data-id="{{ project.id }}"><span>{{ project }}</span><input type="text" value="{{ project }}"><a href="#edit">edit</a></h1>
+	<a id="delete-project" data-name="{{ project }}" href="/project/delete/{{project.pk}}">delete project</a>	
+</header>
+
+<div class="columns">
+	<section class="skills column">
+		<header>
+			<h1>Skills</h1>
+		</header>
+		<ul id="skill-list" class="skill-list">
+			{% for skill in project.skills_set %}<li>{{ skill }}</li>{% endfor %}
+		</ul>
+		<form method="post" id="add-skill" class="add-skill">
+			<input type="text" placeholder="Skill Name" />
+			<input type="submit" value="Add Skill" >
+		</form>
+		
+		<!-- 
+			TODO de returnat doar rezultate pentru skilluri de care avem încă nevoie
+		-->
+		<div class="filter-active-skills">
+			<input type="checkbox" id="filter_active_skills" name="filter_active_skills">
+			<label for="filter_active_skills">Return results only for needed skills</label>
+		</div>
+		
+		<!--
+			Edit Project
+			Aici sunt câmpurile necesare editării proiectului
+		-->
+		<form id="edit-project" method="post" action="/project/edit/{{ project.pk }}">
+			{% csrf_token %}
+			<input type="hidden" name="name" value="{{ project }}">
+			<input type="hidden"
+            name="skills"
+            value="{% for skill in project.skills_set %}{{ skill }}{% if not forloop.last %},{% endif %}{% endfor %}">										
+		</form>
+		
+	</section>
+	
+	<section class="results column">
+		<header>
+			<h1>Our Suggestions</h1>
+		</header>
+		<button id="fetch" data-url="/ajax/suggestions" data-data="project_id={{ project.id }}">Fetch People</button>		
+		<div id="results"></div>
+	</section>
+	
+	<section class="staff column">
+		<header>
+			<h1>The A-TEAM</h1>
+		</header>
+    <div id="staff">{% include 'ajax/members.html' %}</div>					
+	</section>
+	
+	<section class="status column">
+		<header>
+			<h1>Score</h1>
+		</header>					
+		<p class="percent-completed"><strong>{{ project }}</strong><br> has a score of <big><span id="completed-percent">0</span>%</big></p>				
+		<p>You project is automatically saved</p>				
+		<a href="/">Back to the dashboard</a>				
+	</section>
+</div>
+
+</article>
+{% endblock %}

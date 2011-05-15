@@ -1,0 +1,13 @@
+{% for result in results %}
+<div class="person" data-url="{{ result.linkedin_url }}">
+	<figure><a href="{{ result.linkedin_url }}"><img src="{% if result.pic %} {{ result.pic }} {% else %}/static/images/yahoo.png{% endif %}"></a></figure>
+    <div class="text">
+    	<h1>{{ result.first_name }} {{ result.last_name }}</h1>
+    	<div class="person-skills">
+    		{% for skill in result.skills_set %}<span>{{ skill }}</span>{% if not forloop.last %}, {% endif %}{% endfor %}
+    	</div>
+    </div>
+    <button class="add-to-staff">Add</a>
+    <button class="remove-from-staff">Remove</a>
+</div>
+{% endfor %}

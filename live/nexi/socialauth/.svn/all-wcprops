@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/103/trunk/nexi/socialauth
+END
+admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/nexi/socialauth/admin.py
+END
+auth_backends.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/75/trunk/nexi/socialauth/auth_backends.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/nexi/socialauth/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/nexi/socialauth/__init__.py
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/nexi/socialauth/tests.py
+END
+test_data.py.example
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/nexi/socialauth/test_data.py.example
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/nexi/socialauth/models.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/nexi/socialauth/urls.py
+END
+context_processors.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/nexi/socialauth/context_processors.py
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/nexi/socialauth/README
+END
+forms.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/nexi/socialauth/forms.py
+END

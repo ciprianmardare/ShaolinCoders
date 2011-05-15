@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<header role="banner" class="intro">
+	<h1>nexi.me</h1>
+	<p>Staff your project</p>
+</header>
+{% endblock %}
+
+{% block content %}
+<article class="workflow">
+
+	<header>
+		<h1>&mdash; how NEXI works &mdash;</h1>
+	</header>
+
+	<div id="slideshow" class="slideshow">
+		<section>
+			<header>
+				<h1>1. Skills</h1>
+			</header>
+			<p>Choose the skills you require to complete your project</p>
+		</section>
+		
+		<section>
+			<header>
+				<h1>2. People</h1>
+			</header>
+			<p>We'll match the selected skills with people in your netwrok (LinkedIn). Decide who you want on your team</p>
+		</section>
+		
+		<section>
+			<header>
+				<h1>3. Score</h1>
+			</header>
+			<p>Once your project score reaches 100%, start hacking!</p>
+		</section>
+	</div>
+	
+	<div id="pager" class="pager"></div>
+
+</article>
+{% if not logged_in %}
+  <div class="linkedin-login"><a href="/accounts/linkedin_login"><img src="http://developer.linkedin.com/servlet/JiveServlet/downloadImage/102-1182-2-1063/197-31/log-in-linkedin-large.png" /></a></div>
+{% else %}
+  <a href="/logout"><span style='text-color:blue'>Sign out</span></a>
+{% endif %}
+{% endblock %}

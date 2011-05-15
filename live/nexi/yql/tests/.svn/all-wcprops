@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/91/trunk/nexi/yql/tests
+END
+test_query_placeholders.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/91/trunk/nexi/yql/tests/test_query_placeholders.py
+END
+test_requests_responses.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/91/trunk/nexi/yql/tests/test_requests_responses.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/91/trunk/nexi/yql/tests/__init__.py
+END

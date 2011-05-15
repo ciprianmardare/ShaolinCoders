@@ -1,0 +1,95 @@
+from django.conf import settings
+from django.shortcuts import render_to_response, redirect
+from django.template.context import RequestContext
+from socialauth.lib.linkedin import LinkedIn
+from web.helpers import extract_skills_from_user_string, get_skills_info, \
+  update_skills_for_member, compute_score
+from web.models import Project, Member
+from socialauth.models import LinkedInUserProfile
+
+
+def get_linkedin_user(request):
+  ln_user_id = request.user.username[3:]
+  return LinkedInUserProfile.objects.get(linkedin_uid = ln_user_id)
+def index(request):
+  logged_in = request.user.is_authenticated()
+  if logged_in == False:
+    return render_to_response('index.html', {'logged_in' : logged_in,})
+  else:
+    return redirect('web.views.dashboard')
+
+def dashboard(request):
+  ln_user = get_linkedin_user(request)
+  request.session['picture_url'] = ln_user.profile_image_url
+  projects = Project.objects.filter(creator = ln_user)
+  for project in projects:
+    project.skills_info = get_skills_info(project)
+
+  d = {'projects': projects}
+  return render_to_response('dashboard.html', d, RequestContext(request))
+
+def project(request, id):
+  ln_user = get_linkedin_user(request)
+  project = Project.objects.get(pk=id)
+  return render_to_response('project/project.html', { 'project': project}, RequestContext(request))
+
+def project_create(request):
+  if request.method == 'POST':
+    ln_user = get_linkedin_user(request)
+    name = request.POST['name']
+    #skills = extract_skills_from_user_string(request.POST['skills'])
+    #project = Project(name=name, skills_set=skills, creator = ln_user)
+    project = Project(name=name, creator = ln_user)
+    project.save()
+
+    """ prepare object with connections and skills """
+    li = LinkedIn(settings.LINKEDIN_CONSUMER_KEY,\
+      settings.LINKEDIN_CONSUMER_SECRET)
+    access_token = request.session['access_token']
+    connections = li.connections_api.getMyConnections(access_token)
+    members = []
+
+    for conn in connections:
+      member = Member()
+      member.proj = project
+      member.linkedin_url = conn.profile_url
+      member.pic = conn.picture_url
+      member.first_name = conn.firstname
+      member.last_name = conn.lastname
+      member.info = {}
+      member.info['summary'] = conn.summary.lower()
+      member.info['specialties'] = conn.specialties.lower()
+      members.append(member)
+
+    request.session['members_' + str(project.id)] = members
+
+    return redirect('web.views.project', project.id)
+  return render_to_response('project/create.html', {}, RequestContext(request))
+
+def project_edit(request, id):
+  name = request.POST['name']
+  skills = extract_skills_from_user_string(request.POST['skills'])
+  project = Project.objects.get(pk=id)
+  project.skills_set=skills
+  project.name=name
+  project.save()
+  return render_to_response('project/edit.html',{}, RequestContext(request))
+
+def project_delete(request, id):
+  project = Project.objects.get(pk=id)
+  project.delete()
+  return redirect('web.views.dashboard')
+
+def ajax_suggestions(request):
+  project = Project.objects.get(pk=request.GET['project_id'])
+  members = request.session['members_' + str(project.id)]
+  count = request.GET.get('count', 5)
+  
+  for member in members:
+    update_skills_for_member(project, member)
+
+  def score_calculator(member):
+    return compute_score(project, member)
+  results = sorted(members, key=score_calculator, reverse=True)[:count]
+  
+  return render_to_response('ajax/suggestions.html', {'results':results}, RequestContext(request))

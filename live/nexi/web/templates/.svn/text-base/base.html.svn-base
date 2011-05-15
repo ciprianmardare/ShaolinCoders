@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>nexi.me &mdash; Find the best team members for your project!</title>
+
+	<link rel="icon" type="image/ico" href="/static/favicon.ico"/>
+	<link rel="stylesheet" href="/static/css/nexi.css"/>
+
+	<!-- Fonts from Typekit -->
+	<script src="http://use.typekit.com/hyd2ywx.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+	<!-- JS Libs -->
+	<script src="/static/javascript/lib.js"></script>
+	<script src="/static/javascript/nexi.js"></script>
+
+</head>
+<body>
+	{% block header %}
+		<header role="banner">
+			<h1 class="logo"><a href="/">nexi.me</a></h1>
+			<div class="user">
+        		<figure>
+        			<img src='{% if request.session.picture_url %} {{ request.session.picture_url }} {% else %}/static/images/yahoo.png{% endif %}'>
+        		</figure>
+        		<div class="user-inner">{{ user.first_name }} {{ user.last_name}} <a href="/accounts/logout/">Logout</a></div>
+			</div>
+		</header>
+	{% endblock %}
+	{% block content %}{% endblock %}
+</body>
+</html>

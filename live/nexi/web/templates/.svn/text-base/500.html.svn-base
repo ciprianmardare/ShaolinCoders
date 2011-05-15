@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>404 Unicorns</title>
+		
+		<link rel="icon" type="image/ico" href="/static/favicon.ico"/>
+		<link rel="stylesheet" href="/static/css/nexi.css"/>
+	
+		<!-- Fonts from Typekit -->
+		<script src="http://use.typekit.com/hyd2ywx.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+	</head>
+	<body class="iv0iv">
+		<h1>Hi #openhackeu, it seems you were searching <br>for some magic unicorns. <br> Here they are hacking in all their glory:</h1>
+		<div id="images">		
+			{% for photo in photos %}
+				<img src="http://farm{{ photo.farm }}.static.flickr.com/{{ photo.server}}/{{ photo.id }}_{{ photo.secret}}.jpg">
+			{% endfor %}
+		</div>
+	</body>
+</html>
+

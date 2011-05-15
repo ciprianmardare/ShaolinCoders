@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="project-list">
+	<header>
+		<h1>My Projects</h1>
+		<a class="add-project" href="{% url web.views.project_create %}">Add Project</a>
+	</header>						
+	
+    {% for project in projects %}
+    	<article class="project-item">    		
+			<header>
+				<h1><a href="/project/{{ project.id }}">{{ project.name }}</a></h1>
+			</header>
+            <p>
+                {% for skill, number in project.skills_info.iteritems %}
+                    {% if number == 0 %}
+                        <span>{{ skill }}</span>
+                    {% else %}
+                        <span><strong>{{ skill }} ({{ number }})</strong></span>
+                    {% endif %}
+                    {% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </p>
+            <div class="members">
+            	{% for member in project.members %}
+            		<img src="{{ member.pic }}" width="30">
+            	{% endfor %}
+            </div>
+			<div class="staffed">{{ project.score|floatformat:0 }}%</div>	    	
+    	</article>
+    {% endfor %}
+	
+</section>	
+{% endblock %}
